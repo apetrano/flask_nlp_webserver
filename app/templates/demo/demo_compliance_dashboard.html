@@ -1,0 +1,264 @@
+{% extends "demo/demo_index.html" %}
+{% block demo %}
+<link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/project.css" />
+<link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/pygments.css" />
+<link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/share.css" />
+<link href='//fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/dynatable-docs.css" />
+<script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery-1.9.1.min.js'></script>
+<script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.scrollTo.js'></script>
+<script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.toc.min.js'></script>
+<script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.sharrre-1.2.0.min.js'></script>
+<link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/jquery.dynatable.css" />
+<script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
+<script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/highcharts.js'></script>
+
+<div class="dynatable-demo">
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#settingsModal">Settings</button>
+<table id="centairo_table" class="table table-bordered">
+<thead>
+<tr>
+<th>Date</th>
+<th>Status</th>
+<th>Category</th>
+<th>Confidence</th>
+<th>Message</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tr>
+<td align="left">2017-10-05</td>
+<td>Unread</td>
+<td>D&I</td>
+<td>99.58%</td>
+<td>Im sick an tired of these trannies in our meeting</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-05</td>
+<td>Unread</td>
+<td>D&I</td>
+<td>82.7%</td>
+<td>Another token Jew</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-01</td>
+<td>In Review</td>
+<td>D&I</td>
+<td>77.8%</td>
+<td>Fuck all of these women getting promoted</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-11-01</td>
+<td>In Review</td>
+<td>Project</td>
+<td>100.0%</td>
+<td>I just got out of strategy meeting, looks like we are laying off London office</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-05</td>
+<td>In Review</td>
+<td>D&I</td>
+<td>85.6%</td>
+<td>See the new hire? Looks like another fag.</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-10</td>
+<td>Unread</td>
+<td>Project</td>
+<td>88.4%</td>
+<td>North Star is finally going to be released next week</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-12</td>
+<td>Unread</td>
+<td>Legal</td>
+<td>59.8%</td>
+<td>Hey Sam, Im leaving Facebook next week, would you be interested in coming with?</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-11</td>
+<td>Unread</td>
+<td>Project</td>
+<td>76.5%</td>
+<td>Earnings call is next week, we are going to miss our rev target by 10%</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-05</td>
+<td>Unread</td>
+<td>Legal</td>
+<td>43.5%</td>
+<td>Sarah, do you have those financials to send over to feynman?</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-11-01</td>
+<td>In Review</td>
+<td>D&I</td>
+<td>55.5%</td>
+<td>Another fucking Brit? Where do they find these people?</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+<tr>
+<td align="left">2017-10-02</td>
+<td>Unread</td>
+<td>Project</td>
+<td>76.5%</td>
+<td>Northstar is a go! Dont tell your team yet, we are going to reorg</td>
+<td>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">View</button>
+    <button type="button" class="btn btn-success">Pass</button>
+    <button type="button" class="btn btn-danger">Escalate</button>
+  </div>
+</td>
+</tr>
+
+</table>
+</div>
+
+<!-- Base Modal for row View -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Full Message</h4>
+      </div>
+      <div class="modal-body">
+        <p>I just got out of strategy meeting, looks like we are laying off London office. THey may relocate Mark and jennifer to paris but the rest of the team are getting severance. </p>
+         <b> Channel:</b> Slack - Direct Message
+        <p><b> Sent by:</b> <i>Hidden</i></p>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Pass</button>
+          <button type="button" class="btn btn-danger">Escalate</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div id="settingsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Current Settings</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Apply</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#centairo_table').dynatable({
+    features: {
+      pushState: true
+    },
+    readers: {
+      'rank': function(el, record) {
+        return Number(el.innerHTML) || 0;
+      }, 
+      'us-$': function(el, record) {
+        return Number(el.innerHTML.replace(/,/g, ''));
+      }
+    },
+    writers: {
+      'rank': function(record) {
+        return record['rank'] ? record['rank'].toString() : '-';
+      }, 
+      'us-$': function(record) {
+        return record['us-$'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    }
+  });
+</script>
+
+
+{% endblock %}

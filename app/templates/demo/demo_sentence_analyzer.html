@@ -1,0 +1,60 @@
+{% extends "demo/demo_index.html" %}
+{% block demo %}
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.10.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.10.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.10.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.10.min.js"></script>
+  <h1>Centairo Sentence Analyzer</h1>
+  <p>Use Centairo to analyze any sentence.</p>
+  <p>
+	<textarea id="text" name="text_entry" cols="100" rows="10"></textarea>
+  </p>
+  <p>
+  	<button id="run" type="button" class="btn btn-success">Analyze</button>
+  </p>
+  <p><span id="summary"></span></p>
+  <p>
+    <span id="plot"> </span>
+  </p>
+  <p>
+    <span id="plot_sentiment"> </span>
+  </p>
+  <p>
+  	<span id="class_script"> </span>
+  </p>
+    <span id="sentiment_script"> </span>
+  </p>
+
+<script>
+$(document).ready(function(){
+    $("#run").click(function(){
+    	$.ajax({
+    		type: "POST",
+    		url: 'http://127.0.0.1:5000/api/text_analyzer',
+    		contentType: "application/json",
+    		 data: JSON.stringify({
+          "message": [document.getElementById("text").value
+         ]}),
+    		success: function (data) {
+          $("#summary").html('<h2>Centairo Summary<h2>')
+          $("#summary").append("<p><b>Entered Sentence:  </b>" + document.getElementById("text").value +"</p>")
+          $("#plot").html(data['classification_plot'])
+          $("#class_script").html(data['classification_script'])
+          $("#plot_sentiment").html(data['plot_sentiment'])
+          $("#sentiment_script").html(data['sentiment_script'])
+
+    		},
+    		error: function(data) {
+    			$("#result").append("FAIL")
+
+    		}});
+    });
+});
+</script>
+</script>
+{% endblock %}
